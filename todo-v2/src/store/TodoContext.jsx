@@ -26,7 +26,7 @@ export const TodoContextProvider = ({children})=>{
       useEffect(()=>{
         const fetchTodos = async ()=>{
           try {
-            const response = await axios.get('http://localhost:5000/')
+            const response = await axios.get('https://todo-mern-un1z.onrender.com/')
             console.log(response.data)
             dispatch({type: "SET_ITEMS", payload: {items: response.data}})
           } catch (error) {
@@ -39,7 +39,7 @@ export const TodoContextProvider = ({children})=>{
 
 
       const addHandler = async (name, date) => {
-        const response = await axios.post('http://localhost:5000/add-todo', {name, date})
+        const response = await axios.post('https://todo-mern-un1z.onrender.com/add-todo', {name, date})
         console.log(response.data)
         console.log('data inserted')
         const addDispatcher = {
